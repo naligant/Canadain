@@ -18,6 +18,8 @@ private:
 public:
     MainFrame();
     void Initialize();
+    void OnExit(wxCommandEvent& event);
+    void OnAbout(wxCommandEvent&event);
 };
 
 #endif //_MAINFRAME_H_
