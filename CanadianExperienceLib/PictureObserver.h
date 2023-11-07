@@ -14,10 +14,12 @@
  * This class implements the base class functionality for
  * an observer in the observer pattern.
  */
+class Picture;
 class PictureObserver
 {
 private:
-
+    /// Picture we are observing
+    std::shared_ptr<Picture> mPicture;
 public:
     ~PictureObserver();
     /// Copy Constructor (Disabled)
@@ -26,6 +28,8 @@ public:
     void operator=(const PictureObserver &) = delete;
     /// This function is called to update any observers
     virtual void UpdateObserver() = 0;
+    std::shared_ptr<Picture> GetPicture() {return mPicture;}
+    void SetPicture(std::shared_ptr<Picture> picture);
 protected:
     /// Constructor
     PictureObserver() {}

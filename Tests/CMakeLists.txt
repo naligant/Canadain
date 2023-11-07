@@ -4,6 +4,7 @@ set(TEST_FILES
     gtest_main.cpp
     EmptyTest.cpp
         PictureObserverTest.cpp
+        PictureTest.cpp
 )
 
 # Get Google Tests
