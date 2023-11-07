@@ -48,6 +48,21 @@ void ViewTimeline::OnPaint(wxPaintEvent& event)
     // Create a graphics context
     auto graphics = std::shared_ptr<wxGraphicsContext>(wxGraphicsContext::Create( dc ));
 
+    wxPen pen(wxColour(0, 128, 0), 1);
+    graphics->SetPen(pen);
+    graphics->DrawRectangle(10, 10, 200, 60);
+
+    wxFont font(wxSize(0, 16),
+                wxFONTFAMILY_SWISS,
+                wxFONTSTYLE_NORMAL,
+                wxFONTWEIGHT_NORMAL);
+    graphics->SetFont(font, *wxBLACK);
+    graphics->DrawText(L"Timeline!", 15, 15);
+
+    auto time = wxDateTime::Now();
+    auto timeStr = time.Format(L"%x %T");
+    graphics->DrawText(timeStr, 15, 40);
+
 }
 
 /**
@@ -75,5 +90,13 @@ void ViewTimeline::OnLeftUp(wxMouseEvent &event)
 void ViewTimeline::OnMouseMove(wxMouseEvent &event)
 {
 
+}
+
+/**
+ * Force an update of this window when the picture changes.
+ */
+void ViewTimeline::UpdateObserver()
+{
+    Refresh();
 }
 

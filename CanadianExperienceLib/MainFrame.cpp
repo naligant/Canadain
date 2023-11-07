@@ -7,6 +7,7 @@
 #include "MainFrame.h"
 #include "ViewEdit.h"
 #include "ViewTimeline.h"
+#include "Picture.h"
 
 /// Directory within the resources that contains the images.
 const std::wstring ImagesDirectory = L"/images";
@@ -26,6 +27,14 @@ MainFrame::MainFrame()
  */
 void MainFrame::Initialize()
 {
+    //
+    // Create the picture
+    //
+
+    // Create a temporary picture object.
+    // We will remove this later!
+    mPicture = std::make_shared<Picture>();
+
     wxXmlResource::Get()->LoadFrame(this, nullptr, L"MainFrame");
     Bind(wxEVT_COMMAND_MENU_SELECTED, &MainFrame::OnExit, this, wxID_EXIT);
     Bind(wxEVT_COMMAND_MENU_SELECTED, &MainFrame::OnAbout, this, wxID_ABOUT);
@@ -45,6 +54,11 @@ void MainFrame::Initialize()
     // This sets the frame icon on Windows systems
     SetIcon(wxIcon(L"mainframe", wxBITMAP_TYPE_ICO_RESOURCE));
 #endif
+
+    // Tell the views about the picture
+    mViewEdit->SetPicture(mPicture);
+    mViewTimeline->SetPicture(mPicture);
+
 }
 
 /**
