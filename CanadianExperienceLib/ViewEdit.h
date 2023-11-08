@@ -14,13 +14,16 @@
 /**
  * Basic edit view class for the Canadian Experience
  */
-class ViewEdit final : public wxWindow, public PictureObserver {
+class ViewEdit final : public wxScrolledCanvas , public PictureObserver {
 private:
     void OnLeftDown(wxMouseEvent &event);
     void OnLeftUp(wxMouseEvent& event);
     void OnMouseMove(wxMouseEvent& event);
     void OnPaint(wxPaintEvent& event);
     void UpdateObserver() override;
+
+    /// The last mouse position
+    wxPoint mLastMouse = wxPoint(0, 0);
 
 public:
     ViewEdit(wxFrame* parent);

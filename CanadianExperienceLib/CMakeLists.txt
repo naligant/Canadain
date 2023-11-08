@@ -9,6 +9,10 @@ set(SOURCE_FILES
         Picture.h
         PictureObserver.cpp
         PictureObserver.h
+        Actor.cpp
+        Actor.h
+        Drawable.cpp
+        Drawable.h
 )
 
 find_package(wxWidgets COMPONENTS core base xrc html xml REQUIRED)

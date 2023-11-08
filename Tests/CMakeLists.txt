@@ -5,6 +5,8 @@ set(TEST_FILES
     EmptyTest.cpp
         PictureObserverTest.cpp
         PictureTest.cpp
+        ActorTest.cpp
+        DrawableTest.cpp
 )
 
 # Get Google Tests
