@@ -3,7 +3,9 @@
  * @author Prajeeth Naliganti
  */
 
+#include "pch.h"
 #include "Actor.h"
+#include "Drawable.h"
 
 /**
  * Constructor
@@ -22,7 +24,7 @@ Actor::Actor(const std::wstring& name) : mName(name)
  */
 void Actor::SetRoot(std::shared_ptr<Drawable> root)
 {
-
+    mRoot = root;
 }
 
 /**
@@ -53,5 +55,6 @@ std::shared_ptr<Drawable> Actor::HitTest(wxPoint pos)
 */
 void Actor::AddDrawable(std::shared_ptr<Drawable> drawable)
 {
-
+    mDrawablesInOrder.push_back(drawable);
+    drawable->SetActor(this);
 }

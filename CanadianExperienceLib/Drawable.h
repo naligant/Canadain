@@ -28,6 +28,9 @@ private:
     /// The rotation of this drawable relative to its parent
     double mRotation = 0;
 
+    /// The actor using this drawable
+    Actor *mActor = nullptr;
+
 
 public:
     /// Destructor

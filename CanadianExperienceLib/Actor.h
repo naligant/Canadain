@@ -13,7 +13,8 @@
  * An actor is some graphical object that consists of
  * one or more parts. Actors can be animated.
  */
- class Drawable;
+class Drawable;
+class Picture;
 
 class Actor
 {
@@ -29,6 +30,15 @@ private:
 
     /// Is this actor mouse clickable?
     bool mClickable = true;
+
+    /// The root drawable
+    std::shared_ptr<Drawable> mRoot;
+
+    /// The picture using this actor
+    Picture *mPicture = nullptr;
+
+    /// The drawables in drawing order
+    std::vector<std::shared_ptr<Drawable>> mDrawablesInOrder;
 public:
     /// Destructor
     virtual ~Actor() {}
@@ -46,6 +56,7 @@ public:
     void Draw(std::shared_ptr<wxGraphicsContext> graphics);
     std::shared_ptr<Drawable> HitTest(wxPoint pos);
     void AddDrawable(std::shared_ptr<Drawable> drawable);
+    Picture* GetPicture() {return mPicture;}
 
     /**
      * Get the actor name
@@ -89,6 +100,8 @@ public:
      * @param clickable New clickable status
      */
     void SetClickable(bool clickable) { mClickable = clickable; }
+
+    void SetPicture(Picture* picture) {mPicture = picture;}
 protected:
 
 

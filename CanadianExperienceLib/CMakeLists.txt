@@ -13,6 +13,10 @@ set(SOURCE_FILES
         Actor.h
         Drawable.cpp
         Drawable.h
+        PolyDrawable.cpp
+        PolyDrawable.h
+        PictureFactory.cpp
+        PictureFactory.h
 )
 
 find_package(wxWidgets COMPONENTS core base xrc html xml REQUIRED)

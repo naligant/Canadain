@@ -26,7 +26,7 @@ Drawable::Drawable(const std::wstring &name) : mName(name)
  */
 void Drawable::SetActor(Actor *actor)
 {
-
+    mActor = actor;
 }
 
 
@@ -39,7 +39,6 @@ void Drawable::SetActor(Actor *actor)
  */
 void Drawable::Place(wxPoint offset, double rotate)
 {
-
 }
 
 

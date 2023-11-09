@@ -6,6 +6,7 @@
 #include "pch.h"
 #include "Picture.h"
 #include "PictureObserver.h"
+#include "Actor.h"
 
 /**
  * Add an observer to this picture.
@@ -60,4 +61,11 @@ void Picture::Draw(std::shared_ptr<wxGraphicsContext> graphics)
     auto time = wxDateTime::Now();
     auto timeStr = time.Format(L"%x %T");
     graphics->DrawText(timeStr, 410, 340);
+}
+
+
+void Picture::AddActor(std::shared_ptr<Actor> actor)
+{
+    mActors.push_back(actor);
+    actor->SetPicture(this);
 }
