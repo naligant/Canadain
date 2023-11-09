@@ -39,6 +39,16 @@ void Drawable::SetActor(Actor *actor)
  */
 void Drawable::Place(wxPoint offset, double rotate)
 {
+    // Combine the transformation we are given with the transformation
+    // for this object.
+    mPlacedPosition = offset + RotatePoint(mPosition, rotate);
+    mPlacedR = mRotation + rotate;
+
+    // Update our children
+    for (auto drawable : mChildren)
+    {
+        drawable->Place(mPlacedPosition, mPlacedR);
+    }
 }
 
 
@@ -48,7 +58,8 @@ void Drawable::Place(wxPoint offset, double rotate)
  */
 void Drawable::AddChild(std::shared_ptr<Drawable> child)
 {
-
+    mChildren.push_back(child);
+    child->SetParent(this);
 }
 
 
@@ -60,7 +71,14 @@ void Drawable::AddChild(std::shared_ptr<Drawable> child)
  */
 void Drawable::Move(wxPoint delta)
 {
-
+    if (mParent != nullptr)
+    {
+        mPosition = mPosition + RotatePoint(delta, -mParent->mPlacedR);
+    }
+    else
+    {
+        mPosition = mPosition + delta;
+    }
 }
 
 
@@ -71,5 +89,14 @@ void Drawable::Move(wxPoint delta)
  */
 wxPoint Drawable::RotatePoint(wxPoint point, double angle)
 {
-    return wxPoint(0, 0);
+    double cosA = cos(angle);
+    double sinA = sin(angle);
+
+    return wxPoint(int(cosA * point.x + sinA * point.y),
+                   int(-sinA * point.x + cosA * point.y));
+}
+
+void Drawable::SetParent(Drawable* drawable)
+{
+    mParent = drawable;
 }

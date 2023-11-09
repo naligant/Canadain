@@ -47,20 +47,10 @@ void Picture::UpdateObservers()
  */
 void Picture::Draw(std::shared_ptr<wxGraphicsContext> graphics)
 {
-    wxPen pen(wxColour(0, 128, 0), 1);
-    graphics->SetPen(pen);
-    graphics->DrawRectangle(400, 300, 200, 60);
-
-    wxFont font(wxSize(0, 16),
-                wxFONTFAMILY_SWISS,
-                wxFONTSTYLE_NORMAL,
-                wxFONTWEIGHT_NORMAL);
-    graphics->SetFont(font, *wxBLACK);
-    graphics->DrawText(L"Welcome to Canada!", 410, 310);
-
-    auto time = wxDateTime::Now();
-    auto timeStr = time.Format(L"%x %T");
-    graphics->DrawText(timeStr, 410, 340);
+    for (auto actor : mActors)
+    {
+        actor->Draw(graphics);
+    }
 }
 
 

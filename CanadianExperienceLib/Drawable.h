@@ -31,6 +31,13 @@ private:
     /// The actor using this drawable
     Actor *mActor = nullptr;
 
+    /// The drawable children
+    std::vector<std::shared_ptr<Drawable>> mChildren;
+
+
+    ///pointer to itself
+    Drawable *mParent = nullptr;
+
 
 public:
     /// Destructor
@@ -52,6 +59,11 @@ public:
     void AddChild(std::shared_ptr<Drawable> child);
 
     void Move(wxPoint delta);
+
+    void SetParent(Drawable* drawable);
+
+    Drawable* GetParent() {return mParent;}
+
 
     /**
      * Draw this drawable

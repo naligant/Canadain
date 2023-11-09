@@ -23,6 +23,10 @@ private:
 
     /// Points
     std::vector<wxPoint> mPoints;
+
+    /// The transformed graphics path used
+    /// to draw this polygon
+    wxGraphicsPath mPath;
 public:
 
     /// Default constructor (disabled)
@@ -44,7 +48,7 @@ public:
 
     void Draw(std::shared_ptr<wxGraphicsContext> graphics) override;
 
-    bool HitTest(wxPoint pos) override {return false;}
+    bool HitTest(wxPoint pos) override;
 
     /**
      * Add a point

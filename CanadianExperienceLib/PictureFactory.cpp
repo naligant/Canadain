@@ -5,6 +5,8 @@
 #include "pch.h"
 #include "PictureFactory.h"
 #include "Picture.h"
+#include "Actor.h"
+#include "HaroldFactory.h"
 
 using namespace std;
 
@@ -16,6 +18,14 @@ using namespace std;
 std::shared_ptr<Picture> PictureFactory::Create(std::wstring imagesDir)
 {
     shared_ptr<Picture> picture = make_shared<Picture>();
+
+    // Create and add Harold
+    HaroldFactory haroldFactory;
+    auto harold = haroldFactory.Create(imagesDir);
+
+    // This is where Harold will start out.
+    harold->SetPosition(wxPoint(300, 500));
+    picture->AddActor(harold);
 
     return picture;
 }
