@@ -7,6 +7,7 @@
 #include "Picture.h"
 #include "Actor.h"
 #include "HaroldFactory.h"
+#include "ImageDrawable.h"
 
 using namespace std;
 
@@ -19,6 +20,14 @@ std::shared_ptr<Picture> PictureFactory::Create(std::wstring imagesDir)
 {
     shared_ptr<Picture> picture = make_shared<Picture>();
 
+    // Create the background and add it
+    auto background = make_shared<Actor>(L"Background");
+    background->SetClickable(false);
+    background->SetPosition(wxPoint(0, 0));
+    auto backgroundI = make_shared<ImageDrawable>(L"Background", imagesDir + L"/Background.jpg");
+    background->AddDrawable(backgroundI);
+    background->SetRoot(backgroundI);
+    picture->AddActor(background);
     // Create and add Harold
     HaroldFactory haroldFactory;
     auto harold = haroldFactory.Create(imagesDir);

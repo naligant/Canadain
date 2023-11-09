@@ -18,6 +18,12 @@ public:
     void Draw(std::shared_ptr<wxGraphicsContext> graphics) override;
     bool HitTest(wxPoint pos) override;
 
+    ///getter for the center of image
+    wxPoint GetCenter() {return mCenter;}
+
+    /// setter for the center of image
+    void SetCenter(wxPoint center) {mCenter = center;}
+
 protected:
     /// The image we are drawing
     std::unique_ptr<wxImage> mImage;

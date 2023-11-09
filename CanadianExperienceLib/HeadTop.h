@@ -1,0 +1,19 @@
+/**
+ * @file HeadTop.h
+ * @author Prajeeth Naliganti
+ *
+ *
+ */
+
+#ifndef CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_HEADTOP_H
+#define CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_HEADTOP_H
+
+class HeadTop
+{
+private:
+
+public:
+
+};
+
+#endif //CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_HEADTOP_H

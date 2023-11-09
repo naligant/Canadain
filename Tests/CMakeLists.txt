@@ -8,6 +8,7 @@ set(TEST_FILES
         ActorTest.cpp
         DrawableTest.cpp
         PolyDrawableTest.cpp
+        ImageDrawableTest.cpp
 )
 
 # Get Google Tests
