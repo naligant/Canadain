@@ -19,6 +19,8 @@ set(SOURCE_FILES
         PictureFactory.h
         HaroldFactory.cpp
         HaroldFactory.h
+        ImageDrawable.cpp
+        ImageDrawable.h
 )
 
 find_package(wxWidgets COMPONENTS core base xrc html xml REQUIRED)
