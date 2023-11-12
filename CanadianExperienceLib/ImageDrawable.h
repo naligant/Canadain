@@ -17,14 +17,25 @@ private:
     wxPoint mCenter = wxPoint(0, 0);
 
 public:
+    /**
+     * constructor
+     * @param name
+     * @param filename
+     */
     ImageDrawable(const std::wstring &name, const std::wstring &filename);
     void Draw(std::shared_ptr<wxGraphicsContext> graphics) override;
     bool HitTest(wxPoint pos) override;
 
-    ///getter for the center of image
+    /**
+     * gets center
+     * @return center
+     */
     wxPoint GetCenter() {return mCenter;}
 
-    /// setter for the center of image
+    /**
+     * sets center
+     * @param center
+     */
     void SetCenter(wxPoint center) {mCenter = center;}
 
 protected:

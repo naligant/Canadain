@@ -16,8 +16,21 @@ class HeadTop : public ImageDrawable
 private:
 
 public:
+    /**
+     * constructor
+     * @param name
+     * @param filename
+     */
     HeadTop(const std::wstring &name, const std::wstring &filename);
+    /**
+     * draw override
+     * @param graphics
+     */
     void Draw(std::shared_ptr<wxGraphicsContext> graphics) override;
+    /**
+     * is movable override
+     * @return true or false
+     */
     bool IsMovable() override;
     wxPoint TransformPoint(wxPoint p);
 

@@ -59,8 +59,16 @@ public:
 
     void Move(wxPoint delta);
 
+    /**
+     * sets parent
+     * @param drawable
+     */
     void SetParent(Drawable* drawable);
 
+    /**
+     * Gets parent
+     * @return parent
+     */
     Drawable* GetParent() {return mParent;}
 
 
