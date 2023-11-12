@@ -9,8 +9,6 @@
 #define CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_HAROLDFACTORY_H
 class Actor;
 
-using namespace std;
-
 /**
  * Factory class that builds the Harold character
  */

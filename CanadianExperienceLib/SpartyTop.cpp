@@ -1,15 +1,15 @@
 /**
- * @file HeadTop.cpp
+ * @file SpartyTop.cpp
  * @author Prajeeth Naliganti
  */
-#include "pch.h"
-#include "HeadTop.h"
 
-HeadTop::HeadTop(const std::wstring &name, const std::wstring &filename) : ImageDrawable(name, filename)
+#include "pch.h"
+#include "SpartyTop.h"
+
+SpartyTop::SpartyTop(const std::wstring &name, const std::wstring &filename) : ImageDrawable(name, filename)
 {
 }
-
-bool HeadTop::IsMovable()
+bool SpartyTop::IsMovable()
 {
     return true;
 }
@@ -19,7 +19,7 @@ bool HeadTop::IsMovable()
 * @param  p Point to transform
 * @returns Transformed point
 */
-wxPoint HeadTop::TransformPoint(wxPoint p)
+wxPoint SpartyTop::TransformPoint(wxPoint p)
 {
     // Make p relative to the image center
     p = p - GetCenter();
@@ -28,7 +28,7 @@ wxPoint HeadTop::TransformPoint(wxPoint p)
     return RotatePoint(p, mPlacedR) + mPlacedPosition;
 }
 
-void HeadTop::Draw(std::shared_ptr<wxGraphicsContext> graphics)
+void SpartyTop::Draw(std::shared_ptr<wxGraphicsContext> graphics)
 {
     ImageDrawable::Draw(graphics);
 
@@ -36,12 +36,12 @@ void HeadTop::Draw(std::shared_ptr<wxGraphicsContext> graphics)
     float hit = 20.0f;
 
     //random line
-    wxPoint leftEye = TransformPoint(wxPoint(40, 75));
-    wxPoint rightEye = TransformPoint(wxPoint(70, 75));
-    wxPoint leftEyebrowOne = TransformPoint(wxPoint(40 + wid/2 - 2, 75 - hit/2 - 6));
-    wxPoint rightEyebrowOne = TransformPoint(wxPoint(70 + wid/2 + 2, 75 - hit/2 - 5));
-    wxPoint leftEyebrowTwo = TransformPoint(wxPoint(40 - wid/2 - 2, 75 - hit/2 - 5));
-    wxPoint rightEyebrowTwo = TransformPoint(wxPoint(70 - wid/2 + 2, 75 - hit/2 - 6));
+    wxPoint leftEye = TransformPoint(wxPoint(38, 114));
+    wxPoint rightEye = TransformPoint(wxPoint(68, 114));
+    wxPoint leftEyebrowOne = TransformPoint(wxPoint(38 + wid/2 - 2, 114 - hit/2 - 6));
+    wxPoint rightEyebrowOne = TransformPoint(wxPoint(68 + wid/2 + 2, 114 - hit/2 - 5));
+    wxPoint leftEyebrowTwo = TransformPoint(wxPoint(38 - wid/2 - 2, 114 - hit/2 - 5));
+    wxPoint rightEyebrowTwo = TransformPoint(wxPoint(68 - wid/2 + 2, 114 - hit/2 - 6));
     wxPen eyebrowPen(*wxBLACK, 2);
     graphics->SetPen(eyebrowPen);
     graphics->SetBrush(*wxBLACK);

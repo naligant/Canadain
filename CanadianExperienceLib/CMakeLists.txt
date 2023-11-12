@@ -23,6 +23,10 @@ set(SOURCE_FILES
         ImageDrawable.h
         HeadTop.cpp
         HeadTop.h
+        SpartyFactory.cpp
+        SpartyFactory.h
+        SpartyTop.cpp
+        SpartyTop.h
 )
 
 find_package(wxWidgets COMPONENTS core base xrc html xml REQUIRED)

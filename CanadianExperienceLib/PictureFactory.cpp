@@ -7,6 +7,7 @@
 #include "Picture.h"
 #include "Actor.h"
 #include "HaroldFactory.h"
+#include "SpartyFactory.h"
 #include "ImageDrawable.h"
 
 using namespace std;
@@ -28,13 +29,19 @@ std::shared_ptr<Picture> PictureFactory::Create(std::wstring imagesDir)
     background->AddDrawable(backgroundI);
     background->SetRoot(backgroundI);
     picture->AddActor(background);
-    // Create and add Harold
+    // Create and add characters
     HaroldFactory haroldFactory;
+    SpartyFactory spartyFactory;
     auto harold = haroldFactory.Create(imagesDir);
+    auto sparty = spartyFactory.Create(imagesDir);
 
     // This is where Harold will start out.
     harold->SetPosition(wxPoint(300, 500));
     picture->AddActor(harold);
+
+    // This is where Sparty will start out.
+    sparty->SetPosition(wxPoint(700, 450));
+    picture->AddActor(sparty);
 
     return picture;
 }

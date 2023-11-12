@@ -3,6 +3,7 @@
  * @author Prajeeth Naliganti
  */
 
+#include "pch.h"
 #include "ImageDrawable.h"
 
 ImageDrawable::ImageDrawable(const std::wstring &name, const std::wstring &filename) : Drawable(name)

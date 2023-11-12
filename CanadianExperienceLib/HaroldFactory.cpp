@@ -6,6 +6,7 @@
 #include "pch.h"
 #include "HaroldFactory.h"
 #include "Actor.h"
+#include "HeadTop.h"
 #include "PolyDrawable.h"
 #include "ImageDrawable.h"
 
@@ -44,10 +45,11 @@ std::shared_ptr<Actor> HaroldFactory::Create(std::wstring imagesDir)
     headb->SetPosition(wxPoint(0, -130));
     shirt->AddChild(headb);
 
-    auto headt = make_shared<ImageDrawable>(L"Head Top", imagesDir + L"/harold_headt_blank.png");
+    auto headt = make_shared<HeadTop>(L"Head Top", imagesDir + L"/harold_headt_blank.png");
     headt->SetCenter(wxPoint(55, 109));
     headt->SetPosition(wxPoint(0, -31));
     headb->AddChild(headt);
+
 
     auto larm = make_shared<PolyDrawable>(L"Left Arm");
     larm->SetColor(wxColour(60, 174, 184));
