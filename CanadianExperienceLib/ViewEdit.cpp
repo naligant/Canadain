@@ -169,17 +169,26 @@ void ViewEdit::UpdateObserver()
 {
     Refresh();
 }
-
+/**
+ * move mode
+ * @param event
+ */
 void ViewEdit::OnEditMove(wxCommandEvent& event)
 {
     mMode = Mode::Move;
 }
-
+/**
+ * rotate mode
+ * @param event
+ */
 void ViewEdit::OnEditRotate(wxCommandEvent& event)
 {
     mMode = Mode::Rotate;
 }
-
+/**
+ * update move
+ * @param event
+ */
 void ViewEdit::OnUpdateEditMove(wxUpdateUIEvent& event)
 {
     if (mMode == Mode::Move)
@@ -193,6 +202,10 @@ void ViewEdit::OnUpdateEditMove(wxUpdateUIEvent& event)
         event.Enable(true);
     }
 }
+/**
+ * update rotate
+ * @param event
+ */
 void ViewEdit::OnUpdateEditRotate(wxUpdateUIEvent& event)
 {
     if (mMode == Mode::Rotate)

@@ -16,6 +16,11 @@ class SpartyTop : public ImageDrawable
 private:
 
 public:
+    /**
+     * constructor
+     * @param name
+     * @param filename
+     */
     SpartyTop(const std::wstring &name, const std::wstring &filename);
     void Draw(std::shared_ptr<wxGraphicsContext> graphics) override;
     bool IsMovable()override;

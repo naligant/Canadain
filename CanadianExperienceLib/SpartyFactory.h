@@ -18,6 +18,11 @@ class SpartyFactory
 private:
 
 public:
+    /**
+     * creates the sparty
+     * @param imagesDir
+     * @return
+     */
     std::shared_ptr<Actor> Create(std::wstring imagesDir);
 
 };

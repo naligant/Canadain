@@ -9,6 +9,11 @@
 SpartyTop::SpartyTop(const std::wstring &name, const std::wstring &filename) : ImageDrawable(name, filename)
 {
 }
+
+/**
+ * makes object moveable
+ * @return if object is moveable
+ */
 bool SpartyTop::IsMovable()
 {
     return true;
@@ -27,7 +32,10 @@ wxPoint SpartyTop::TransformPoint(wxPoint p)
     // Rotate as needed and offset
     return RotatePoint(p, mPlacedR) + mPlacedPosition;
 }
-
+/**
+ * draw override
+ * @param graphics
+ */
 void SpartyTop::Draw(std::shared_ptr<wxGraphicsContext> graphics)
 {
     ImageDrawable::Draw(graphics);
