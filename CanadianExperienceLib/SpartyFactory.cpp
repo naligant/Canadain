@@ -11,6 +11,7 @@
 #include "PolyDrawable.h"
 #include "ImageDrawable.h"
 
+using namespace std;
 
 std::shared_ptr<Actor> SpartyFactory::Create(std::wstring imagesDir)
 {
