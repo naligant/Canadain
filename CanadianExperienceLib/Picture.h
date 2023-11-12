@@ -7,15 +7,14 @@
 
 #ifndef CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_PICTURE_H
 #define CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_PICTURE_H
+class PictureObserver;
+class Actor;
 /**
  * The picture we are drawing.
  *
  * There will be one picture object that contains all of
  * our actors, which then contains the drawables.
  */
-class PictureObserver;
-class Actor;
-
 class Picture
 {
 private:

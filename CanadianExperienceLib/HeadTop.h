@@ -8,7 +8,9 @@
 #ifndef CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_HEADTOP_H
 #define CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_HEADTOP_H
 #include "ImageDrawable.h"
-
+/**
+ * Class that draws head of harold seperately
+ */
 class HeadTop : public ImageDrawable
 {
 private:

@@ -8,7 +8,9 @@
 #ifndef CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_SPARTYTOP_H
 #define CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_SPARTYTOP_H
 #include "ImageDrawable.h"
-
+/**
+ * Draws top of sparty's head separately
+ */
 class SpartyTop : public ImageDrawable
 {
 private:

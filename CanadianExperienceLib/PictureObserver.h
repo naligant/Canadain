@@ -7,14 +7,13 @@
 
 #ifndef CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_PICTUREOBSERVER_H
 #define CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_PICTUREOBSERVER_H
-
+class Picture;
 /**
  * Observer base class for a picture.
  *
  * This class implements the base class functionality for
  * an observer in the observer pattern.
  */
-class Picture;
 class PictureObserver
 {
 private:

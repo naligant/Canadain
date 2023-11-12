@@ -8,6 +8,9 @@
 #ifndef CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_IMAGEDRAWABLE_H
 #define CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_IMAGEDRAWABLE_H
 #include "Drawable.h"
+/**
+ * class that hosts all images that are drawable
+ */
 class ImageDrawable : public Drawable
 {
 private:

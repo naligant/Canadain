@@ -7,6 +7,7 @@
 
 #ifndef CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_DRAWABLE_H
 #define CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_DRAWABLE_H
+class Actor;
 
 /**
  * Abstract base class for drawable elements of our picture.
@@ -14,8 +15,6 @@
  * A drawable is one part of an actor. Drawable parts can be moved
  * independently.
  */
-class Actor;
-
 class Drawable
 {
 private:

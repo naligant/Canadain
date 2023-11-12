@@ -7,14 +7,15 @@
 
 #ifndef CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_ACTOR_H
 #define CANADIANEXPERIENCE_CANADIANEXPERIENCELIB_ACTOR_H
+class Drawable;
+class Picture;
+
 /**
  * Class for actors in our drawings.
  *
  * An actor is some graphical object that consists of
  * one or more parts. Actors can be animated.
  */
-class Drawable;
-class Picture;
 
 class Actor
 {
@@ -56,6 +57,10 @@ public:
     void Draw(std::shared_ptr<wxGraphicsContext> graphics);
     std::shared_ptr<Drawable> HitTest(wxPoint pos);
     void AddDrawable(std::shared_ptr<Drawable> drawable);
+    /**
+     * Gets picture
+     * @return picture
+     */
     Picture* GetPicture() {return mPicture;}
 
     /**
@@ -101,6 +106,10 @@ public:
      */
     void SetClickable(bool clickable) { mClickable = clickable; }
 
+    /**
+     * Sets picture
+     * @param picture
+     */
     void SetPicture(Picture* picture) {mPicture = picture;}
 protected:
 
