@@ -14,6 +14,7 @@
 class ImageDrawable : public Drawable
 {
 private:
+    ///center of the image
     wxPoint mCenter = wxPoint(0, 0);
 
 public:

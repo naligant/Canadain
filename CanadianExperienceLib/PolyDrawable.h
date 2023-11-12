@@ -38,16 +38,26 @@ public:
     /// Assignment operator
     void operator=(const PolyDrawable &) = delete;
 
-    ///Getter for polygon color
+    /**
+     * gets color
+     * @return color
+     */
     wxColour GetColor() {return mColor;}
 
-    ///Setter fot polygon color
+    /**
+     * sets color
+     * @param color
+     */
     void SetColor(wxColour color) {mColor = color;}
 
     PolyDrawable(const std::wstring &name);
 
     void Draw(std::shared_ptr<wxGraphicsContext> graphics) override;
-
+    /**
+     * hittest
+     * @param pos
+     * @return
+     */
     bool HitTest(wxPoint pos) override;
 
     /**

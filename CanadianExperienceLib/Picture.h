@@ -48,10 +48,18 @@ public:
      * @param size Picture size in pixels
      */
     void SetSize(wxSize size) {mSize = size;}
+    /**
+     * sets root
+     * @param root
+     */
     void SetRoot(std::shared_ptr<Actor> root) {mRoot = root;}
     void AddObserver(PictureObserver *observer);
     void RemoveObserver(PictureObserver *observer);
     void UpdateObservers();
+    /**
+     * adds actor
+     * @param actor
+     */
     void AddActor(std::shared_ptr<Actor> actor);
     void Draw(std::shared_ptr<wxGraphicsContext> graphics);
 
